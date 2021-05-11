@@ -2,7 +2,7 @@ class Vaulter < Formula
   desc "A swiss-knife CLI for 42dot infra"
   homepage "https://gitlab.42dot.ai/vaulter.git"
   url "git://gitlab.42dot.ai:sysadmin/vaulter.git"
-  version ""
+  version "v0.1.3"
   sha256 ""
   license "42dot proprietary"
 
