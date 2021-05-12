@@ -1,28 +1,29 @@
 class Vaulter < Formula
-  desc "A swiss-knife CLI for 42dot infra"
+  desc "A CLI tool for 42dot"
   homepage "https://gitlab.42dot.ai/vaulter.git"
-  url "git://gitlab.42dot.ai:sysadmin/vaulter.git"
+  url "https://gitlab.42dot.ai/sysadmin/vaulter.git",
+       tag:      "v0.1.3",
+       revision: "64eb3ac7b51c5c3ec039f31f10cd9ceb67de123d"
+
   version "v0.1.3"
-  sha256 ""
   license "42dot proprietary"
+
+  bottle do
+    root_url "https://binplate.42dot.io/brew/vaulter/v0.1.3"
+    sha256 cellar: :any_skip_relocation, big_sur: "16b5e98e3830964d3c5db3e785137ef9623cb91e179910bfca2c7824f09bcf82"
+  end
 
   depends_on "go" => :build
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
-    system "go", "build", *std_go_args
+    system "go", "build", "-ldflags",
+             "-s -w -X gitlab.42dot.ai/sysadmin/vaulter/cmd.version=#{version}",
+             *std_go_args
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! For Homebrew/homebrew-core
-    # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test vaulter`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    assert_match "Vaulter: #{version}",
+                 shell_output("#{bin}/vaulter version")
   end
 end
