@@ -9,7 +9,7 @@ class Vaulter < Formula
   license "42dot proprietary"
 
   bottle do
-    root_url "https://binplate.42dot.io/brew/vaulter/v0.1.3"
+    root_url "https://binplate.42dot.systems/brew/vaulter/v0.1.3"
     sha256 cellar: :any_skip_relocation, big_sur: "16b5e98e3830964d3c5db3e785137ef9623cb91e179910bfca2c7824f09bcf82"
   end
 
