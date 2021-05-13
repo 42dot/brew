@@ -11,6 +11,7 @@ class Vaulter < Formula
   bottle do
     root_url "https://binplate.42dot.systems/brew/vaulter/v0.1.3"
     sha256 cellar: :any_skip_relocation, big_sur: "16b5e98e3830964d3c5db3e785137ef9623cb91e179910bfca2c7824f09bcf82"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "4dae0af4a7499ffbe81f5ce69f44a36e615b8d7ff3587c45293b18477fb0ffa6"
   end
 
   depends_on "go" => :build
