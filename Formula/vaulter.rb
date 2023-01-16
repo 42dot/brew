@@ -2,16 +2,11 @@ class Vaulter < Formula
   desc "A CLI tool for 42dot"
   homepage "https://gitlab.42dot.ai/vaulter.git"
   url "https://gitlab.42dot.ai/sysadmin/vaulter.git",
-       tag:      "v1.1.0-beta.1",
-       revision: "2c6e2d05718b1e7f447790332e634e3c25784fb3"
+       tag:      "v1.2.1",
+       revision: "f38e2fd2d8b606e387195eb100ecd0889bf425eb"
 
-  version "v1.1.0-beta.1"
+  version "v1.2.1"
   license "42dot proprietary"
-
-  bottle do
-    root_url "https://binplate.42dot.systems/brew/vaulter/v1.1.0-beta.1"
-    sha256 cellar: :any_skip_relocation, big_sur: "c9e2f298c0029e581181bd85cabf1b672eb4716acefca55ea9296d12cd4b7a1b"
-  end
 
   depends_on "go" => :build
 
